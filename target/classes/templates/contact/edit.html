@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/">
+    <head>
+        <title>Contacts</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <h1>New/Edit Contact</h1><br/>
+        <form method="post" action="/create" th:action="@{/edit/{id}(id=${contact.id})}">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            Name:
+                        </td>
+                        <td>
+                            <input type="text" name="name" th:value="${contact.name}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email:
+                        </td>
+                        <td>
+                            <input type="email" name="email" th:value="${contact.email}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Address:
+                        </td>
+                        <td>
+                            <input type="text" name="address" th:value="${contact.address}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Telephone:
+                        </td>
+                        <td>
+                            <input type="text" name="telephone" th:value="${contact.telephone}"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit">Save</button>
+        </form>
+    </body>
+</html>
